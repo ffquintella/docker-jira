@@ -26,8 +26,7 @@ class { 'jira':
   javahome      => $java_home,
   version       => $jira_version,
   installdir    => $jira_installdir,
-  homedir       => $jira_home,
-  download_url  =>'https://downloads.atlassian.com/software/jira/downloads/binary/'
+  homedir       => $jira_home
 }
 class { 'jira::facts': }
 
