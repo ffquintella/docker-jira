@@ -1,7 +1,11 @@
 package {'sudo':
   ensure => present
-}
+}->
 package{'zip':
+  ensure => present
+}
+
+package{'dos2unix':
   ensure => present
 }
 
@@ -23,39 +27,38 @@ class { 'jdk_oracle':
 } ->
 
 class { 'jira':
-  javahome      => $java_home,
-  version       => $jira_version,
-  installdir    => $jira_installdir,
-  homedir       => $jira_home
-}
-class { 'jira::facts': }
+  javahome       => $java_home,
+  version        => $jira_version,
+  installdir     => $jira_installdir,
+  homedir        => $jira_home,
+  service_manage => false
+} ->
+#class { 'jira::facts': }
 
-/*->
-if $bamboo_proxy  != 'false' {
-class { 'bamboo':
-  version      => $bamboo_version,
-  installdir   => $bamboo_installdir,
-  homedir      => $bamboo_home,
-  java_home    => $java_home,
-  download_url => $bamboo_dowload_url,
-  context_path => $bamboo_context,
-  proxy        => {
-    scheme    => $bamboo_proxy_scheme,
-    proxyName => $bamboo_proxy_name,
-    proxyPort => $bamboo_proxy_port,
-  },
+file {'/opt/scripts/fixline.sh':
+  mode    => '0777',
+  content => 'find . -iname \'*.sh\' | xargs dos2unix',
+  require => Package['dos2unix']
+} ->
+
+# Fix dos2unix
+exec {'dos2unix-fix':
+  path    => '/bin:/sbin:/usr/bin:/usr/sbin',
+  cwd     => "${jira_installdir}/atlassian-jira-software-${jira_version}-standalone/bin",
+  command => '/opt/scripts/fixline.sh'
+} ->
+
+exec {'dos2unix-fix-start-service':
+  path    => '/bin:/sbin:/usr/bin:/usr/sbin',
+  cwd     => "/opt/scripts",
+  command => '/opt/scripts/fixline.sh'
+} ->
+
+file { '/usr/bin/start-service':
+  ensure => link,
+  target => '/opt/scripts/start-service.sh',
 }
-} else {
-  class { 'bamboo':
-    version      => $bamboo_version,
-    installdir   => $bamboo_installdir,
-    homedir      => $bamboo_home,
-    java_home    => $java_home,
-    download_url => $bamboo_dowload_url,
-    context_path => $bamboo_context
-  }
-}
-*/
+
 
 # Full update
 exec {'Full update':
