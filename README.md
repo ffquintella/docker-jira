@@ -16,8 +16,8 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-
-* Version: `7.1.9.1` - Latest
+* Version: `7.1.9.2` - Latest: Some fixes on the code
+* Version: `7.1.9.1` - First version
 
 
 ## Installation
