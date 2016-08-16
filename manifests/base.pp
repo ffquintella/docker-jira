@@ -59,6 +59,10 @@ file { '/usr/bin/start-service':
   target => '/opt/scripts/start-service.sh',
 }
 
+exec {'erase dbconfig':
+  path  => '/bin:/sbin:/usr/bin:/usr/sbin',
+  command => "rm -f ${jira_home}/dbconfig.xml"
+} ->
 
 # Full update
 exec {'Full update':

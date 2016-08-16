@@ -1,13 +1,14 @@
 
 $real_appdir = "${jira_installdir}/atlassian-jira-software-${jira_version}-standalone"
 
-class { 'jira':
+/*class { 'jira':
   javahome       => $java_home,
   version        => $jira_version,
   installdir     => $jira_installdir,
   homedir        => $jira_home,
   service_manage => false
 } ->
+*/
 
 # Fix dos2unix
 exec {'dos2unix-fix':
@@ -44,6 +45,6 @@ exec {'Pre Run CMD':
 # Starting bamboo
 exec {'Starting Jira':
   path  => '/bin:/sbin:/usr/bin:/usr/sbin',
-  command => "echo \"Starting Jira Server ...\"; $real_appdir/bin/start-jira.sh & "
+  command => "echo \"Starting Jira Server ...\"; $real_appdir/bin/start-jira.sh & ",
   require => Exec['dos2unix-fix-start-service']
 }
