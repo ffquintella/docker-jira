@@ -73,18 +73,12 @@ It is recommended to specify `hostname` for this image, so if you will recreate 
 
 > Some basic configurations are allowed to configure the system and make it easier to change at docker command line
 
-- FACTER_BAMBOO_VERSION "5.10.1.1" - Bamboo version to be installed
-- FACTER_BAMBOO_INSTALLDIR "/opt/bamboo" - Bamboo install dir
-- FACTER_BAMBOO_HOME "/opt/bamboo-home" - Bamboo home
-- FACTER_BAMBOO_DOWNLOAD_URL "https://www.atlassian.com/software/bamboo" - Url used to download bamboo in container creation
-- JAVA_HOME "/opt/java_home" - Java home (we use oracle jdk 1.8.11)
-- FACTER_BAMBOO_PROXY "false" - If bamboo is behind a proxy
-- FACTER_BAMBOO_PROXY_SCHEME "https"
-- FACTER_BAMBOO_PROXY_NAME "bamboo.local"
-- FACTER_BAMBOO_PROXY_PORT "443"
-- FACTER_JAVA_HOME $JAVA_HOME - Just to be acessible in puppet
-- FACTER_PRE_RUN_CMD "" - Command to be executed just before starting bamboo
-- FACTER_EXTRA_PACKS "" - Packages to be installed at runtime (must be centos7 packages on the defaul repos or epel)
+* JAVA_HOME "/opt/java_home" - Java install dir
+* JIRA_VERSION "7.1.9" - Version of jira
+* JIRA_INSTALLDIR "/opt/jira"
+* JIRA_HOME "/opt/jira-home"
+* FACTER_PRE_RUN_CMD "" - Command to be executed just before starting bamboo
+* FACTER_EXTRA_PACKS "" - Packages to be installed at runtime (must be centos7 packages on the defaul repos or epel)
 
 
 ## Upgrade from previous version
