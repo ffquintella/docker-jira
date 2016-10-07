@@ -5,7 +5,7 @@
 
 Current branch: latest
 
-*  `7.2.2.1`, `7.1.9.1`, `latest`
+*  `7.2.2.2`,`7.2.2.1`, `7.1.9.1`, `latest`
 
 For previous versions or newest releases see other branches.
 
