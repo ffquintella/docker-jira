@@ -2,7 +2,14 @@
 
 set -e
 
+export JAVA_HOME=/opt/java_home/jdk1.8.0_11
+export java_home=$JAVA_HOME
+
 /opt/puppetlabs/puppet/bin/puppet apply -l /var/log/puppet.log --modulepath=/etc/puppet/modules /etc/puppet/manifests/start.pp
+
+#echo "Starting Jira Server ..."
+#/opt/jira/atlassian-jira-software-7.2.2-standalone/bin/start-jira.sh &
+
 
 while [ ! -f ${FACTER_JIRA_HOME}/log/atlassian-jira.log ]
 do
