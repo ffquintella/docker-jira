@@ -13,7 +13,7 @@ $real_appdir = "${jira_installdir}/atlassian-jira-software-${jira_version}-stand
 # Fix dos2unix
 exec {'dos2unix-fix':
   path    => '/bin:/sbin:/usr/bin:/usr/sbin',
-  cwd     => "${jira_installdir}/atlassian-jira-software-${jira_version}-standalone/bin",
+  cwd     => "${real_appdir}/bin",
   command => '/opt/scripts/fixline.sh'
 } ->
 
@@ -45,6 +45,6 @@ exec {'Pre Run CMD':
 # Starting bamboo
 exec {'Starting Jira':
   path  => '/bin:/sbin:/usr/bin:/usr/sbin',
-  command => "echo \"Starting Jira Server ...\"; $real_appdir/bin/start-jira.sh & ",
+  command => "echo \"Starting Jira Server ...\"; ${real_appdir}/bin/start-jira.sh & ",
   require => Exec['dos2unix-fix-start-service']
 }
