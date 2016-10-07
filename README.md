@@ -5,7 +5,7 @@
 
 Current branch: latest
 
-*  `7.1.9.1`, `latest`
+*  `7.2.2.1`, `7.1.9.1`, `latest`
 
 For previous versions or newest releases see other branches.
 
@@ -16,7 +16,8 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-* Version: `7.1.9.2` - Latest: Some fixes on the code
+* Version: `7.2.2.2` - Latest: Some fixes on the code
+* Version: `7.1.9.2` - 7.1.9
 * Version: `7.1.9.1` - First version
 
 
