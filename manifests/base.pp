@@ -35,6 +35,12 @@ class { 'jira':
 } ->
 #class { 'jira::facts': }
 
+file {'/opt/jira-config':
+  ensure  => directory,
+  source  => "file:///${jira_installdir}/atlassian-jira-software-${jira_version}-standalone/conf",
+  recurse => 'true'
+} ->
+
 file {'/opt/scripts/fixline.sh':
   mode    => '0777',
   content => 'find . -iname \'*.sh\' | xargs dos2unix',

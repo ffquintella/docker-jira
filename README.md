@@ -5,7 +5,8 @@
 
 Current branch: latest
 
-*  `7.2.2.3`,`7.2.2.2`,`7.2.2.1`, `7.1.9.1`, `latest`
+*  `7.2.2.4`,`7.2.2.3`,`7.2.2.2`,`7.2.2.1`,`latest`
+*  `7.1.9.1`
 
 For previous versions or newest releases see other branches.
 
@@ -16,7 +17,8 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-* Version: `7.2.2.3` - Latest: Some small fixes on the startup scripts
+* Version: `7.2.2.4` - Latest: Added feature to copy the content of the conf dir after startup (to share the dir)
+* Version: `7.2.2.3` - Some small fixes on the startup scripts
 * Version: `7.2.2.2` - Jira 7.2.2
 * Version: `7.1.9.2` - 7.1.9
 * Version: `7.1.9.1` - First version
@@ -40,7 +42,10 @@ cd docker-jira
 
 ## Quick Start
 
-Not written yet
+Just create a volume or share a host directory for /opt/jira-home and (optionaly) for the configuration dir
+jira uses.
+
+You can also use the pre_run_cmd variable to determine commands to be pre-runned
 
 
 ## Configuration
@@ -57,15 +62,14 @@ No special users
 
 Next ports are exposed
 
-* `8085/tcp` - Bamboo default web interface
-* `54663/tcp` - Bamboo broker
+* `8080/tcp` - default port
 
 
 ### Entrypoint
 
 We use puppet as the default entry point to manage the environment
 
-*Bamboo is launched in background. Which means that is possible to restart bamboo without restarting the container.*
+*Jira is launched in background. Which means that is possible to restart jira without restarting the container.*
 
 ### Hostname
 

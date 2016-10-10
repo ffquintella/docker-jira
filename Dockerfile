@@ -2,7 +2,7 @@ FROM ffquintella/docker-puppet:latest
 
 MAINTAINER Felipe Quintella <docker-jira@felipe.quintella.email>
 
-LABEL version="7.2.2.1"
+LABEL version="7.2.2.4"
 LABEL description="This image contais the jira application to be used \
 as a server."
 
