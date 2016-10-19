@@ -5,7 +5,7 @@
 
 Current branch: latest
 
-*  `7.2.3.2`,`7.2.3.1`
+*  `7.2.3.3`,`7.2.3.2`,`7.2.3.1`
 *  `7.2.2.4`,`7.2.2.3`,`7.2.2.2`,`7.2.2.1`
 *  `7.1.9.1`
 
@@ -18,7 +18,8 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-* Version: `7.2.3.2` - Latest: Upgraded java to 111 build 14
+* Version: `7.2.3.3` - Latest: Fix Startup Script
+* Version: `7.2.3.2` - Upgraded java to 111 build 14
 * Version: `7.2.3.1` - Upgraded to Jira 7.2.3
 * Version: `7.2.2.4` - Added feature to copy the content of the conf dir after startup (to share the dir)
 * Version: `7.2.2.3` - Some small fixes on the startup scripts
