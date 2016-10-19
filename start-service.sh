@@ -2,7 +2,7 @@
 
 set -e
 
-export JAVA_HOME=/opt/java_home/jdk1.8.0_11
+export JAVA_HOME=/opt/java_home/java_home
 export java_home=$JAVA_HOME
 
 /opt/puppetlabs/puppet/bin/puppet apply -l /var/log/puppet.log --modulepath=/etc/puppet/modules /etc/puppet/manifests/start.pp
