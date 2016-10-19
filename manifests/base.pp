@@ -23,6 +23,8 @@ gpgcheck=0'
 class { 'jdk_oracle':
   version     => '8',
   install_dir => $java_home,
+  version_update => '111',
+  version_build  => '14',
   package     => 'server-jre'
 } ->
 
