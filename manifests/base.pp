@@ -21,11 +21,25 @@ gpgcheck=0'
 }
 
 class { 'jdk_oracle':
-  version     => '8',
+  version     => $java_version,
   install_dir => $java_home,
-  version_update => '111',
-  version_build  => '14',
+  version_update => $java_version_update,
+  version_build  => $java_version_build,
   package     => 'server-jre'
+} ->
+
+file { '/etc/pki/tls/certs/java':
+  ensure  => directory
+} ->
+
+file { '/etc/pki/tls/certs/java/cacerts':
+  ensure  => link,
+  target  => '/etc/pki/ca-trust/extracted/java/cacerts'
+} ->
+
+file { "/opt/java_home/jdk1.${java_version}.0_${java_version_update}/jre/lib/security/cacerts":
+  ensure  => link,
+  target  => '/etc/pki/tls/certs/java/cacerts'
 } ->
 
 class { 'jira':

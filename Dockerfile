@@ -2,7 +2,7 @@ FROM ffquintella/docker-puppet:latest
 
 MAINTAINER Felipe Quintella <docker-jira@felipe.quintella.email>
 
-LABEL version="7.2.3.3"
+LABEL version="7.2.3.4"
 LABEL description="This image contais the jira application to be used \
 as a server."
 
@@ -24,6 +24,11 @@ ENV FACTER_JIRA_INSTALLDIR $JIRA_INSTALLDIR
 ENV FACTER_JIRA_HOME $JIRA_HOME
 
 ENV FACTER_JAVA_HOME "/opt/java_home"
+ENV FACTER_JAVA_VERSION "8"
+ENV FACTER_JAVA_VERSION_UPDATE "111"
+ENV FACTER_JAVA_VERSION_BUILD "14"
+
+
 ENV FACTER_PRE_RUN_CMD ""
 ENV FACTER_EXTRA_PACKS ""
 
