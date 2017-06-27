@@ -10,3 +10,6 @@
 [submodule "modules/jira"]
 	path = modules/jira
 	url = https://github.com/ffquintella/puppet-jira.git
+[submodule "modules/alternatives"]
+	path = modules/alternatives
+	url = https://github.com/voxpupuli/puppet-alternatives.git
