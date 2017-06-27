@@ -2,19 +2,17 @@ FROM ffquintella/docker-puppet:latest
 
 MAINTAINER Felipe Quintella <docker-jira@felipe.quintella.email>
 
-LABEL version="7.2.3.4"
+LABEL version="7.3.8.1"
 LABEL description="This image contais the jira application to be used \
 as a server."
 
-#https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-5.10.1.1.tar.gz
-#https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-5.10.1.tar.gz
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
 ENV JAVA_HOME "/opt/java_home/java_home"
-ENV JIRA_VERSION "7.2.3"
+ENV JIRA_VERSION "7.3.8"
 ENV JIRA_INSTALLDIR "/opt/jira"
 ENV JIRA_HOME "/opt/jira-home"
 
@@ -25,8 +23,9 @@ ENV FACTER_JIRA_HOME $JIRA_HOME
 
 ENV FACTER_JAVA_HOME "/opt/java_home"
 ENV FACTER_JAVA_VERSION "8"
-ENV FACTER_JAVA_VERSION_UPDATE "111"
-ENV FACTER_JAVA_VERSION_BUILD "14"
+ENV FACTER_JAVA_VERSION_UPDATE "131"
+ENV FACTER_JAVA_VERSION_BUILD "11"
+ENV FACTER_JAVA_VERSION_HASH "d54c1d3a095b4ff2b6607d096fa80163"
 
 
 ENV FACTER_PRE_RUN_CMD ""
