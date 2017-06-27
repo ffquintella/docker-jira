@@ -27,6 +27,8 @@ ENV FACTER_JAVA_VERSION_UPDATE "131"
 ENV FACTER_JAVA_VERSION_BUILD "11"
 ENV FACTER_JAVA_VERSION_HASH "d54c1d3a095b4ff2b6607d096fa80163"
 
+ENV JVM_MINIMUM_MEMORY 512m
+ENV JVM_MAXIMUM_MEMORY 4096m
 
 ENV FACTER_PRE_RUN_CMD ""
 ENV FACTER_EXTRA_PACKS ""
@@ -39,6 +41,9 @@ COPY modules /etc/puppet/modules/
 COPY start-service.sh /opt/scripts/start-service.sh
 RUN chmod +x /opt/scripts/start-service.sh ; /opt/puppetlabs/puppet/bin/puppet apply -l /tmp/puppet.log  --modulepath=/etc/puppet/modules /etc/puppet/manifests/base.pp  ;\
  yum clean all ; rm -rf /tmp/* ; rm -rf /var/cache/* ; rm -rf /var/tmp/* ; rm -rf /var/opt/staging
+
+COPY setenv.sh ${JIRA_INSTALLDIR}/atlassian-jira-software-${JIRA_VERSION}-standalone/bin
+RUN chmod +x ${JIRA_INSTALLDIR}/atlassian-jira-software-${JIRA_VERSION}-standalone/bin/setenv.sh
 
 # Ports Jira web interface
 EXPOSE 8080/tcp

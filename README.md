@@ -5,6 +5,7 @@
 
 Current branch: latest
 
+*  `7.3.8.1`,
 *  `7.2.3.4`,`7.2.3.3`,`7.2.3.2`,`7.2.3.1`
 *  `7.2.2.4`,`7.2.2.3`,`7.2.2.2`,`7.2.2.1`
 *  `7.1.9.1`
@@ -18,7 +19,8 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-* Version: `7.2.3.4` - Latest: Fix on java cacerts pointing
+* Version: `7.3.8.1` - Latest: Upgrade - 7.2.3 -> 7.3.8; Upgraded java to 8u131
+* Version: `7.2.3.4` - Fix on java cacerts pointing
 * Version: `7.2.3.3` - Fix Startup Script
 * Version: `7.2.3.2` - Upgraded java to 111 build 14
 * Version: `7.2.3.1` - Upgraded to Jira 7.2.3
@@ -93,6 +95,8 @@ If you want to add more certs to it ou can mount this file.
 * JIRA_VERSION "7.1.9" - Version of jira
 * JIRA_INSTALLDIR "/opt/jira"
 * JIRA_HOME "/opt/jira-home"
+* JVM_MINIMUM_MEMORY 512m - Java memory parameter, changing this is needed for larger installs
+* ENV JVM_MAXIMUM_MEMORY 4096m - Java memory parameter, changing this is needed for larger installs
 * FACTER_PRE_RUN_CMD "" - Command to be executed just before starting bamboo
 * FACTER_EXTRA_PACKS "" - Packages to be installed at runtime (must be centos7 packages on the defaul repos or epel)
 

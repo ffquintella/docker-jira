@@ -25,33 +25,33 @@ class { 'jdk_oracle':
   install_dir => $java_home,
   version_update => $java_version_update,
   version_build  => $java_version_build,
+  version_hash  => $java_version_hash,
   package     => 'server-jre'
-} ->
+}
 
-file { '/etc/pki/tls/certs/java':
+-> file { '/etc/pki/tls/certs/java':
   ensure  => directory
-} ->
+}
 
-file { '/etc/pki/tls/certs/java/cacerts':
+-> file { '/etc/pki/tls/certs/java/cacerts':
   ensure  => link,
   target  => '/etc/pki/ca-trust/extracted/java/cacerts'
-} ->
+}
 
-file { "/opt/java_home/jdk1.${java_version}.0_${java_version_update}/jre/lib/security/cacerts":
+-> file { "/opt/java_home/jdk1.${java_version}.0_${java_version_update}/jre/lib/security/cacerts":
   ensure  => link,
   target  => '/etc/pki/tls/certs/java/cacerts'
-} ->
+}
 
-class { 'jira':
+-> class { 'jira':
   javahome       => $java_home,
   version        => $jira_version,
   installdir     => $jira_installdir,
   homedir        => $jira_home,
   service_manage => false
-} ->
-#class { 'jira::facts': }
+}
 
-file {'/opt/jira-config':
+-> file {'/opt/jira-config':
   ensure  => directory,
   source  => "file:///${jira_installdir}/atlassian-jira-software-${jira_version}-standalone/conf",
   recurse => 'true'
