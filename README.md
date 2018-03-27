@@ -5,6 +5,7 @@
 
 Current branch: latest
 
+*  `7.8.1.1`,
 *  `7.7.1.1`,
 *  `7.3.8.1`,
 *  `7.2.3.4`,`7.2.3.3`,`7.2.3.2`,`7.2.3.1`
@@ -20,7 +21,8 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-* Version: `7.7.1.1` - Latest: Upgrade - 7.3.8 -> 7.7.1; Upgraded java to 8u161
+* Version: `7.8.1.1` - Latest: Upgrade - 7.7.1 -> 7.8.1;
+* Version: `7.7.1.1` - Upgrade - 7.3.8 -> 7.7.1; Upgraded java to 8u161
 * Version: `7.3.8.1` - Upgrade - 7.2.3 -> 7.3.8; Upgraded java to 8u131
 * Version: `7.2.3.4` - Fix on java cacerts pointing
 * Version: `7.2.3.3` - Fix Startup Script
