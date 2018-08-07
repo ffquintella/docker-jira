@@ -5,6 +5,7 @@
 
 Current branch: latest
 
+*  `7.11.1.1`,
 *  `7.8.1.1`,
 *  `7.7.1.1`,
 *  `7.3.8.1`,
@@ -21,18 +22,19 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-* Version: `7.8.1.1` - Latest: Upgrade - 7.7.1 -> 7.8.1;
-* Version: `7.7.1.1` - Upgrade - 7.3.8 -> 7.7.1; Upgraded java to 8u161
-* Version: `7.3.8.1` - Upgrade - 7.2.3 -> 7.3.8; Upgraded java to 8u131
-* Version: `7.2.3.4` - Fix on java cacerts pointing
-* Version: `7.2.3.3` - Fix Startup Script
-* Version: `7.2.3.2` - Upgraded java to 111 build 14
-* Version: `7.2.3.1` - Upgraded to Jira 7.2.3
-* Version: `7.2.2.4` - Added feature to copy the content of the conf dir after startup (to share the dir)
-* Version: `7.2.2.3` - Some small fixes on the startup scripts
-* Version: `7.2.2.2` - Jira 7.2.2
-* Version: `7.1.9.2` - 7.1.9
-* Version: `7.1.9.1` - First version
+* Version: `7.11.1.1` - Latest: Upgrade - 7.8.1 -> 7.11.1; Upgraded java to 8u181
+* Version: `7.8.1.1`  - Upgrade - 7.7.1 -> 7.8.1;
+* Version: `7.7.1.1`  - Upgrade - 7.3.8 -> 7.7.1; Upgraded java to 8u161
+* Version: `7.3.8.1`  - Upgrade - 7.2.3 -> 7.3.8; Upgraded java to 8u131
+* Version: `7.2.3.4`  - Fix on java cacerts pointing
+* Version: `7.2.3.3`  - Fix Startup Script
+* Version: `7.2.3.2`  - Upgraded java to 111 build 14
+* Version: `7.2.3.1`  - Upgraded to Jira 7.2.3
+* Version: `7.2.2.4`  - Added feature to copy the content of the conf dir after startup (to share the dir)
+* Version: `7.2.2.3`  - Some small fixes on the startup scripts
+* Version: `7.2.2.2`  - Jira 7.2.2
+* Version: `7.1.9.2`  - 7.1.9
+* Version: `7.1.9.1`  - First version
 
 
 ## Installation
@@ -96,7 +98,7 @@ If you want to add more certs to it ou can mount this file.
 > Some basic configurations are allowed to configure the system and make it easier to change at docker command line
 
 * JAVA_HOME "/opt/java_home" - Java install dir
-* JIRA_VERSION "7.1.9" - Version of jira
+* JIRA_VERSION "7.11.1" - Version of jira
 * JIRA_INSTALLDIR "/opt/jira"
 * JIRA_HOME "/opt/jira-home"
 * JVM_MINIMUM_MEMORY 512m - Java memory parameter, changing this is needed for larger installs
