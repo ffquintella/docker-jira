@@ -5,7 +5,7 @@ set -e
 export JAVA_HOME=/opt/java_home/java_home
 export java_home=$JAVA_HOME
 
-/opt/puppetlabs/puppet/bin/puppet apply -l /var/log/puppet.log --modulepath=/etc/puppet/modules /etc/puppet/manifests/start.pp
+/opt/puppetlabs/puppet/bin/puppet apply --modulepath=/etc/puppet/modules /etc/puppet/manifests/start.pp
 
 #echo "Starting Jira Server ..."
 #/opt/jira/atlassian-jira-software-7.2.2-standalone/bin/start-jira.sh &
