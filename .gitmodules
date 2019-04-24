@@ -13,3 +13,8 @@
 [submodule "modules/alternatives"]
 	path = modules/alternatives
 	url = https://github.com/voxpupuli/puppet-alternatives.git
+[submodule "modules/java"]
+	
+        path = modules/java
+	
+        url = https://github.com/puppetlabs/puppetlabs-java.git

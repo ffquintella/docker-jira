@@ -20,14 +20,32 @@ enabled=1
 gpgcheck=0'
 }
 
-class { 'jdk_oracle':
-  version     => $java_version,
-  install_dir => $java_home,
-  version_update => $java_version_update,
-  version_build  => $java_version_build,
-  version_hash  => $java_version_hash,
-  package     => 'server-jre'
+#https://download.oracle.com/otn/java/jdk/8u212-b10/59066701cf1a433da9770636fbc4c9aa/jre-8u212-linux-x64.tar.gz
+#java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6
+#java-11-openjdk-11.0.3.7-0.el7_6
+
+
+if $java_version == '11'
+{
+  $java_package = "java-${java_version}-openjdk-${java_version}.0.${java_version_update}.${java_version_build}-0.el7_6"
 }
+else
+{
+  $java_package = "java-1.${java_version}.0-openjdk-1.${java_version}.0.${java_version_update}.b${java_version_build}-0.el7_6"
+}
+
+class { 'java':
+  package  => $java_package,
+}
+
+# java::oracle { 'jre8' :
+  # ensure  => 'present',
+  # version_major => "${java_version}u${java_version_update}",
+  # version_minor => "b${java_version_build}",
+  # java_se => 'server-jre',
+  # oracle_url => 'http://download.oracle.com/otn/java/jdk',
+  # url_hash => $java_version_hash,
+# }
 
 -> file { '/etc/pki/tls/certs/java':
   ensure  => directory
@@ -38,14 +56,24 @@ class { 'jdk_oracle':
   target  => '/etc/pki/ca-trust/extracted/java/cacerts'
 }
 
--> file { "/opt/java_home/jdk1.${java_version}.0_${java_version_update}/jre/lib/security/cacerts":
+-> file { "/usr/lib/jvm/jre/lib/security/cacerts":
   ensure  => link,
   target  => '/etc/pki/tls/certs/java/cacerts'
 }
 
+-> file { '/opt/java_home/':
+  ensure  => directory
+}
+
+-> file { '/opt/java_home/java_home':
+  ensure  => link,
+  target  => '/usr/lib/jvm'
+}
+  
 -> class { 'jira':
   javahome       => $java_home,
   version        => $jira_version,
+  checksum       => $jira_checksum,
   installdir     => $jira_installdir,
   homedir        => $jira_home,
   service_manage => false
