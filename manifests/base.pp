@@ -67,7 +67,7 @@ class { 'java':
 
 -> file { '/opt/java_home/java_home':
   ensure  => link,
-  target  => '/usr/lib/jvm'
+  target  => '/etc/alternatives/jre'
 }
   
 -> class { 'jira':
