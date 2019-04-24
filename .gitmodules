@@ -1,6 +1,3 @@
-[submodule "modules/jdk_oracle"]
-	path = modules/jdk_oracle
-	url = https://github.com/tylerwalts/puppet-jdk_oracle.git
 [submodule "modules/archive"]
 	path = modules/archive
 	url = https://github.com/voxpupuli/puppet-archive.git
@@ -14,7 +11,5 @@
 	path = modules/alternatives
 	url = https://github.com/voxpupuli/puppet-alternatives.git
 [submodule "modules/java"]
-	
-        path = modules/java
-	
-        url = https://github.com/puppetlabs/puppetlabs-java.git
+    path = modules/java
+    url = https://github.com/puppetlabs/puppetlabs-java.git
