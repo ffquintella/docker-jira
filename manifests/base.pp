@@ -73,6 +73,7 @@ class { 'java':
 -> class { 'jira':
   javahome       => $java_home,
   version        => $jira_version,
+  download_url   => $jira_download_url,
   checksum       => $jira_checksum,
   installdir     => $jira_installdir,
   homedir        => $jira_home,
