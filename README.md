@@ -5,7 +5,7 @@
 
 Current branch: latest
 
-*  `8.1.0.1`,
+*  `8.1.1.1`,`8.1.0.1`
 *  `7.11.1.1`,
 *  `7.8.1.1`,
 *  `7.7.1.1`,
@@ -23,8 +23,10 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 
 ### Version
-* Version: `8.1.0.1`  - Latest: Upgrade - 7.11.1 -> 8.1.0; Upgraded java to 8u201
-* Version: `7.11.1.1` - Latest: Upgrade - 7.8.1 -> 7.11.1; Upgraded java to 8u181
+
+* Version: `8.1.1.1`  - Latest: Upgrade - 8.1.0 -> 8.1.1;
+* Version: `8.1.0.1`  - Upgrade - 7.11.1 -> 8.1.0; Changed java to openjdk-1.8.0.212
+* Version: `7.11.1.1` - Upgrade - 7.8.1 -> 7.11.1; Upgraded java to 8u181
 * Version: `7.8.1.1`  - Upgrade - 7.7.1 -> 7.8.1;
 * Version: `7.7.1.1`  - Upgrade - 7.3.8 -> 7.7.1; Upgraded java to 8u161
 * Version: `7.3.8.1`  - Upgrade - 7.2.3 -> 7.3.8; Upgraded java to 8u131
