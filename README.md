@@ -5,11 +5,11 @@
 
 Current branch: latest
 
-*  `8.1.1.1`,`8.1.0.1`
-*  `7.11.1.1`,
-*  `7.8.1.1`,
-*  `7.7.1.1`,
-*  `7.3.8.1`,
+*  `8.1.2.1`,`8.1.1.1`,`8.1.0.1`
+*  `7.11.1.1`
+*  `7.8.1.1`
+*  `7.7.1.1`
+*  `7.3.8.1`
 *  `7.2.3.4`,`7.2.3.3`,`7.2.3.2`,`7.2.3.1`
 *  `7.2.2.4`,`7.2.2.3`,`7.2.2.2`,`7.2.2.1`
 *  `7.1.9.1`
@@ -24,7 +24,8 @@ Dockerfiles to build [Jira](https://www.atlassian.com/software/jira)
 
 ### Version
 
-* Version: `8.1.1.1`  - Latest: Upgrade - 8.1.0 -> 8.1.1;
+* Version: `8.1.2.1`  - Latest: Upgrade - 8.1.1 -> 8.1.2;
+* Version: `8.1.1.1`  - Upgrade - 8.1.0 -> 8.1.1;
 * Version: `8.1.0.1`  - Upgrade - 7.11.1 -> 8.1.0; Changed java to openjdk-1.8.0.212
 * Version: `7.11.1.1` - Upgrade - 7.8.1 -> 7.11.1; Upgraded java to 8u181
 * Version: `7.8.1.1`  - Upgrade - 7.7.1 -> 7.8.1;
@@ -102,7 +103,7 @@ If you want to add more certs to it ou can mount this file.
 > Some basic configurations are allowed to configure the system and make it easier to change at docker command line
 
 * JAVA_HOME "/opt/java_home" - Java install dir
-* JIRA_VERSION "8.1.0" - Version of jira
+* JIRA_VERSION "8.2.2" - Version of jira
 * JIRA_INSTALLDIR "/opt/jira"
 * JIRA_HOME "/opt/jira-home"
 * JVM_MINIMUM_MEMORY 1024m - Java memory parameter, changing this is needed for larger installs
