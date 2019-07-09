@@ -103,7 +103,7 @@ If you want to add more certs to it ou can mount this file.
 > Some basic configurations are allowed to configure the system and make it easier to change at docker command line
 
 * JAVA_HOME "/opt/java_home" - Java install dir
-* JIRA_VERSION "8.2.2" - Version of jira
+* JIRA_VERSION "8.1.2" - Version of jira
 * JIRA_INSTALLDIR "/opt/jira"
 * JIRA_HOME "/opt/jira-home"
 * JVM_MINIMUM_MEMORY 1024m - Java memory parameter, changing this is needed for larger installs

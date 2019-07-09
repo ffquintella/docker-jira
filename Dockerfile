@@ -12,7 +12,6 @@ ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
 #https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.1.0.tar.gz
-#https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.2.2.tar.gz
 
 ENV JAVA_HOME "/opt/java_home/java_home"
 ENV JIRA_VERSION "8.1.2"
