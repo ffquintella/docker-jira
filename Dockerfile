@@ -3,9 +3,7 @@ FROM ffquintella/docker-puppet:latest
 MAINTAINER Felipe Quintella <docker-jira@felipe.quintella.email>
 
 LABEL version="8.2.4.1"
-LABEL description="This image contais the jira application to be used \
-as a server."
-
+LABEL description="This image contais the jira application to be used as a server."
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
@@ -13,6 +11,7 @@ ENV LC_ALL=en_US.UTF-8
 
 ENV JAVA_HOME "/opt/java_home/java_home"
 ENV JIRA_VERSION "8.2.4"
+
 ENV JIRA_INSTALLDIR "/opt/jira"
 ENV JIRA_HOME "/opt/jira-home"
 ENV JIRA_CHECKSUM "f045c6c1ef35f6d11a84409286fb3bad"
