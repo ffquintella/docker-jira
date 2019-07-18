@@ -2,7 +2,7 @@ FROM ffquintella/docker-puppet:latest
 
 MAINTAINER Felipe Quintella <docker-jira@felipe.quintella.email>
 
-LABEL version="8.1.1.1"
+LABEL version="8.2.4.1"
 LABEL description="This image contais the jira application to be used \
 as a server."
 
@@ -11,10 +11,8 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-#https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.1.0.tar.gz
-
 ENV JAVA_HOME "/opt/java_home/java_home"
-ENV JIRA_VERSION "8.1.1"
+ENV JIRA_VERSION "8.2.4"
 ENV JIRA_INSTALLDIR "/opt/jira"
 ENV JIRA_HOME "/opt/jira-home"
 ENV JIRA_CHECKSUM "f045c6c1ef35f6d11a84409286fb3bad"
@@ -26,7 +24,6 @@ ENV FACTER_JIRA_INSTALLDIR $JIRA_INSTALLDIR
 ENV FACTER_JIRA_HOME $JIRA_HOME
 ENV FACTER_JIRA_DOWNLOAD_URL $JIRA_DOWNLOAD_URL
 
-#https://download.oracle.com/otn/java/jdk/8u212-b10/59066701cf1a433da9770636fbc4c9aa/jre-8u212-linux-x64.rpm
 
 ENV FACTER_JAVA_HOME "/opt/java_home"
 ENV FACTER_JAVA_VERSION "8"
