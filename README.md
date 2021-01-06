@@ -1,5 +1,9 @@
 # Table of Contents
 
+** IMAGE OBSOLETE!!! ** 
+
+Since Atlassian started creating their own version of jira software images this one is no longer supported and considered obsolete please use the official images.
+
 
 ## Supported tags
 
